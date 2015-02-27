@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.github.airk.democollection.R;
+import com.github.airk.democollection.materialprogress.MaterialProgressActivity;
 import com.github.airk.democollection.palette.PaletteActivity;
 import com.github.airk.democollection.wheeldialog.WheelActivity;
 
@@ -26,6 +27,9 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.wheel_btn) void doWheel() {
         startActivity(new Intent(this, WheelActivity.class));
+
+    @OnClick(R.id.progress_btn) void doProgress() {
+        startActivity(new Intent(this, MaterialProgressActivity.class));
     }
 
 }

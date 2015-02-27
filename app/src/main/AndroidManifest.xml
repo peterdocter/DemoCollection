@@ -24,6 +24,7 @@
         <activity android:name=".palette.PaletteColorActivity" android:label="Palette" />
 
         <activity android:name=".wheeldialog.WheelActivity" android:label="Wheel"/>
+        <activity android:name=".materialprogress.MaterialProgressActivity" android:label="ProgressBar" />
     </application>
 
 </manifest>
