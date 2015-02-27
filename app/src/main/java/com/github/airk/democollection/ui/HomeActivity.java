@@ -27,6 +27,7 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.wheel_btn) void doWheel() {
         startActivity(new Intent(this, WheelActivity.class));
+    }
 
     @OnClick(R.id.progress_btn) void doProgress() {
         startActivity(new Intent(this, MaterialProgressActivity.class));
