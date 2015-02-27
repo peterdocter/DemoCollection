@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".palette.PaletteActivity" android:label="Palette" />
         <activity android:name=".palette.PaletteColorActivity" android:label="Palette" />
+
+        <activity android:name=".wheeldialog.WheelActivity" android:label="Wheel"/>
     </application>
 
 </manifest>

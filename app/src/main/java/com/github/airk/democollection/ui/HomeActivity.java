@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.github.airk.democollection.R;
 import com.github.airk.democollection.palette.PaletteActivity;
+import com.github.airk.democollection.wheeldialog.WheelActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -21,6 +22,10 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.palette_btn) void doPalette() {
         startActivity(new Intent(this, PaletteActivity.class));
+    }
+
+    @OnClick(R.id.wheel_btn) void doWheel() {
+        startActivity(new Intent(this, WheelActivity.class));
     }
 
 }

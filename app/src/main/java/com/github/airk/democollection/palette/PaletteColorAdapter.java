@@ -18,14 +18,26 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import lombok.Getter;
 
 /**
  * Created by kevin on 15/1/15.
  */
 public class PaletteColorAdapter extends RecyclerView.Adapter<PaletteColorAdapter.BaseHolder> {
     private Context context;
-    private ArrayList<Palette.Swatch> data;
+    private ArrayList<ColorData> data;
     private String topUrl;
+
+    @Getter
+    private class ColorData {
+        int color;
+        String name;
+
+        private ColorData(String name, int color) {
+            this.name = name;
+            this.color = color;
+        }
+    }
 
     private final int TYPE_TOP = 1;
     private final int TYPE_COLOR = 2;
@@ -35,10 +47,15 @@ public class PaletteColorAdapter extends RecyclerView.Adapter<PaletteColorAdapte
         data = new ArrayList<>();
     }
 
-    public void setData(String url, List<Palette.Swatch> swatches) {
+    public void setData(String url, Palette palette) {
         topUrl = url;
-        if (swatches != null) {
-            data = new ArrayList<>(swatches);
+        if (palette != null) {
+            data.add(new ColorData("Vibrant", palette.getVibrantSwatch().getRgb()));
+            data.add(new ColorData("Vibrant Dark", palette.getDarkVibrantSwatch().getRgb()));
+            data.add(new ColorData("Vibrant Light", palette.getLightVibrantSwatch().getRgb()));
+            data.add(new ColorData("Muted", palette.getMutedSwatch().getRgb()));
+            data.add(new ColorData("Muted Dark", palette.getDarkMutedSwatch().getRgb()));
+            data.add(new ColorData("Muted Light", palette.getLightMutedSwatch().getRgb()));
         } else {
             data.clear();
         }
@@ -74,13 +91,13 @@ public class PaletteColorAdapter extends RecyclerView.Adapter<PaletteColorAdapte
             Glide.with(context).load(topUrl).asBitmap().into(image);
         } else {
             ColorHolder colorHolder = (ColorHolder) holder;
-            colorHolder.bindData(data.get(position));
+            colorHolder.bindData(data.get(position - 1));
         }
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return data.size() + 1/*TOP*/;
     }
     public class BaseHolder extends RecyclerView.ViewHolder {
 
@@ -110,9 +127,10 @@ public class PaletteColorAdapter extends RecyclerView.Adapter<PaletteColorAdapte
             ButterKnife.inject(this, itemView);
         }
 
-        public void bindData(Palette.Swatch swatch) {
-            ColorDrawable drawable = new ColorDrawable(swatch.getRgb());
+        public void bindData(ColorData data) {
+            ColorDrawable drawable = new ColorDrawable(data.getColor());
             image.setImageDrawable(drawable);
+            name.setText(data.getName());
         }
     }
 }

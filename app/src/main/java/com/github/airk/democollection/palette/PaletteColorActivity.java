@@ -12,8 +12,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.github.airk.democollection.R;
 import com.github.airk.democollection.ui.BaseActivity;
@@ -78,7 +76,7 @@ public class PaletteColorActivity extends BaseActivity {
                 Palette.generateAsync(resource, new Palette.PaletteAsyncListener() {
                     @Override
                     public void onGenerated(Palette palette) {
-                        mAdapter.setData(img, palette.getSwatches());
+                        mAdapter.setData(img, palette);
                     }
                 });
                 return false;
