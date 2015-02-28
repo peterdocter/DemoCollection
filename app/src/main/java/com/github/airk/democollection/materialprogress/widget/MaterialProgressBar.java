@@ -10,6 +10,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,7 @@ public class MaterialProgressBar extends View {
     private final int DEFAULT_ANIM_DURATION_IN_MS = 1200;
 
     private int circleSize;
+    private int strokeSize;
     public static final int CIRCLE_SIZE_SMALL_IN_DP = 28;
     public static final int CIRCLE_SIZE_NORMAL_IN_DP = 40;
     public static final int CIRCLE_SIZE_LARGE_IN_DP = 64;
@@ -39,7 +41,7 @@ public class MaterialProgressBar extends View {
 
     private ArrayList<Integer> colors;
 
-    private Interpolator interpolator = new AccelerateDecelerateInterpolator();
+    private Interpolator interpolator = new LinearInterpolator();
 
     private RectF container;
 
@@ -66,13 +68,13 @@ public class MaterialProgressBar extends View {
 
     private void init() {
         circleSize = (int) (CIRCLE_SIZE_NORMAL_IN_DP * getResources().getDisplayMetrics().density);
+        strokeSize = (int) (DEFAULT_STROKE_SIZE_IN_DP * getResources().getDisplayMetrics().density);
     }
 
     int counter;
 
     @Override
     protected void onDraw(Canvas canvas) {
-        long startStamp = System.currentTimeMillis();
         if (firstPercent == Float.MIN_VALUE) {
             firstPercent = 0f;
         }
@@ -83,8 +85,17 @@ public class MaterialProgressBar extends View {
         if (firstPaint == null) {
             firstPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
             firstPaint.setStyle(Paint.Style.STROKE);
-            firstPaint.setStrokeWidth(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                    DEFAULT_STROKE_SIZE_IN_DP, getResources().getDisplayMetrics()));
+//            firstPaint.setStyle(Paint.Style.FILL);
+            firstPaint.setColor(DEFAULT_DARK_COLOR);
+//            firstPaint.setStrokeWidth(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+//                    DEFAULT_STROKE_SIZE_IN_DP, getResources().getDisplayMetrics()));
+            firstPaint.setStrokeWidth(1);
+        }
+        if (secPaint == null) {
+            secPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            secPaint.setStyle(Paint.Style.STROKE);
+            secPaint.setColor(DEFAULT_LIGHT_COLOR);
+            secPaint.setStrokeWidth(3);
         }
 
         if (container == null) {
@@ -95,20 +106,22 @@ public class MaterialProgressBar extends View {
             container = new RectF(left, top, right, bottom);
         }
 
-        canvas.drawArc(container, 135 * firstPercent + 135 * counter, 320 * firstPercent, false, firstPaint);
+//        canvas.drawArc(container, 135 * firstPercent + 135 * counter, 320 * firstPercent, false, firstPaint);
 
-//        Log.d(TAG, "Cost: " + (System.currentTimeMillis() - startStamp) + "ms");
+        canvas.drawArc(container, -90f + 360 * firstPercent, 1f, true, firstPaint);
+        canvas.drawCircle(container.centerX(), container.centerY(), circleSize / 2, secPaint);
+
         step();
         invalidate();
     }
 
     private void step() {
-        if (ticker % 1 >= 1f) {
-//            ticker = 0f;
+        if (ticker /*% 1*/ >= 1f) {
+            ticker = 0f;
             counter++;
         }
         secPercent = firstPercent = interpolator.getInterpolation(ticker);
-        ticker += 0.015;
+        ticker += 0.01;
 
         if (firstPercent >= 1f) {
             firstPercent = Float.MIN_VALUE;
@@ -120,31 +133,7 @@ public class MaterialProgressBar extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int width, height;
-        int widthSpec = MeasureSpec.getMode(widthMeasureSpec);
-        int heightSpec = MeasureSpec.getMode(heightMeasureSpec);
-        switch (widthSpec) {
-            case MeasureSpec.EXACTLY:
-                width = MeasureSpec.getSize(widthMeasureSpec);
-                break;
-            case MeasureSpec.UNSPECIFIED:
-            case MeasureSpec.AT_MOST:
-            default:
-                width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                        circleSize, getResources().getDisplayMetrics());
-                break;
-        }
-        switch (heightSpec) {
-            case MeasureSpec.EXACTLY:
-                height = MeasureSpec.getSize(heightMeasureSpec);
-                break;
-            case MeasureSpec.UNSPECIFIED:
-            case MeasureSpec.AT_MOST:
-            default:
-                height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                        circleSize, getResources().getDisplayMetrics());
-                break;
-        }
-        setMeasuredDimension(width, height);
+        setMeasuredDimension(resolveSize(circleSize + strokeSize, widthMeasureSpec),
+                resolveSize(circleSize + strokeSize, heightMeasureSpec));
     }
 }
