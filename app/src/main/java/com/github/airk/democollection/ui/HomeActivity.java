@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.github.airk.democollection.R;
+import com.github.airk.democollection.hidetoolbar.HideToolbarParent;
 import com.github.airk.democollection.materialprogress.MaterialProgressActivity;
 import com.github.airk.democollection.palette.PaletteActivity;
+import com.github.airk.democollection.rxjava.RxActivity;
 import com.github.airk.democollection.wheeldialog.WheelActivity;
 
 import butterknife.ButterKnife;
@@ -31,6 +33,14 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.progress_btn) void doProgress() {
         startActivity(new Intent(this, MaterialProgressActivity.class));
+    }
+
+    @OnClick(R.id.rxjava_btn) void doRxJava() {
+        startActivity(new Intent(this, RxActivity.class));
+    }
+
+    @OnClick(R.id.hide_toolbar_btn) void doHideToolbar() {
+        startActivity(new Intent(this, HideToolbarParent.class));
     }
 
 }

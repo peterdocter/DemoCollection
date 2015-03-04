@@ -25,6 +25,28 @@
 
         <activity android:name=".wheeldialog.WheelActivity" android:label="Wheel"/>
         <activity android:name=".materialprogress.MaterialProgressActivity" android:label="ProgressBar" />
+        <activity android:name=".rxjava.RxActivity" android:label="RxJava" android:parentActivityName=".ui.HomeActivity" />
+
+        <activity android:name=".hidetoolbar.HideToolbarParent" android:label="HideToolbar"
+            android:parentActivityName=".ui.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.HomeActivity" />
+            </activity>
+        <activity android:name=".hidetoolbar.HideToolbar1" android:theme="@style/AppTheme.NoActionBar"
+            android:label="HideToolbar1"
+            android:parentActivityName=".hidetoolbar.HideToolbarParent">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".hidetoolbar.HideToolbarParent" />
+            </activity>
+        <activity android:name=".hidetoolbar.HideToolbar2" android:theme="@style/AppTheme.NoActionBar"
+            android:label="HideToolbar2"
+            android:parentActivityName=".hidetoolbar.HideToolbarParent">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".hidetoolbar.HideToolbarParent" />
+            </activity>
     </application>
 
 </manifest>

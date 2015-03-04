@@ -13,7 +13,7 @@ import java.io.InputStream;
  * Created by kevin on 15/1/14.
  */
 public class DemoApplication extends Application {
-    private OkHttpClient mHttpClient;
+    private volatile OkHttpClient mHttpClient;
 
     @Override
     public void onCreate() {

@@ -26,4 +26,16 @@
         android:text="Progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/rxjava_btn"
+        android:text="RxJava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/hide_toolbar_btn"
+        android:text="HideToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
