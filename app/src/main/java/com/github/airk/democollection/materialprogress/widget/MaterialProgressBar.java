@@ -72,6 +72,7 @@ public class MaterialProgressBar extends View {
     }
 
     int counter;
+    float angle = -90f;
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -109,6 +110,7 @@ public class MaterialProgressBar extends View {
 //        canvas.drawArc(container, 135 * firstPercent + 135 * counter, 320 * firstPercent, false, firstPaint);
 
         canvas.drawArc(container, -90f + 360 * firstPercent, 1f, true, firstPaint);
+        canvas.drawArc(container, (-90f + counter * 30) + 30 * firstPercent, 1f, true, firstPaint);
         canvas.drawCircle(container.centerX(), container.centerY(), circleSize / 2, secPaint);
 
         step();
