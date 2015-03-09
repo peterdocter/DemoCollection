@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.github.airk.democollection.R;
+import com.github.airk.democollection.custommenuitem.MenuItemActivity;
 import com.github.airk.democollection.hidetoolbar.HideToolbarParent;
 import com.github.airk.democollection.materialprogress.MaterialProgressActivity;
 import com.github.airk.democollection.palette.PaletteActivity;
@@ -41,6 +42,10 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.hide_toolbar_btn) void doHideToolbar() {
         startActivity(new Intent(this, HideToolbarParent.class));
+    }
+
+    @OnClick(R.id.custom_menu_btn) void doShowCustomMenu() {
+        startActivity(new Intent(this, MenuItemActivity.class));
     }
 
 }

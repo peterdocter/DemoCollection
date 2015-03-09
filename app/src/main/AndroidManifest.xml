@@ -47,6 +47,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".hidetoolbar.HideToolbarParent" />
             </activity>
+
+        <activity android:name=".custommenuitem.MenuItemActivity"
+            android:label="CustomMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.HomeActivity" />
+            </activity>
     </application>
 
 </manifest>
