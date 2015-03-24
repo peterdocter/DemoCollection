@@ -54,6 +54,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.HomeActivity" />
             </activity>
+
+        <activity android:name=".downloader.DownloadActivity"
+            android:label="Download">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.HomeActivity" />
+            </activity>
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.github.airk.democollection.R;
 import com.github.airk.democollection.custommenuitem.MenuItemActivity;
+import com.github.airk.democollection.downloader.DownloadActivity;
 import com.github.airk.democollection.hidetoolbar.HideToolbarParent;
 import com.github.airk.democollection.materialprogress.MaterialProgressActivity;
 import com.github.airk.democollection.palette.PaletteActivity;
@@ -46,6 +47,10 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.custom_menu_btn) void doShowCustomMenu() {
         startActivity(new Intent(this, MenuItemActivity.class));
+    }
+
+    @OnClick(R.id.downloader_btn) void doDownloader() {
+        startActivity(new Intent(this, DownloadActivity.class));
     }
 
 }
