@@ -61,6 +61,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.HomeActivity" />
             </activity>
+
+        <activity android:name=".testcase.TestActivity"
+            android:label="TestCase">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.HomeActivity" />
+            </activity>
+
+        <activity android:name=".webview.WebViewActivity"
+            android:label="WebView">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>

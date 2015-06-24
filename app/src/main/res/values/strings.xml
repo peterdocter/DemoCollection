@@ -5,4 +5,13 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="webview_type">
+        <item>NONE</item>
+        <item>XML</item>
+        <item>CACHE</item>
+        <item>LOAD</item>
+        <item>LOCAL</item>
+        <item>OFFLOADER</item>
+    </string-array>
+
 </resources>

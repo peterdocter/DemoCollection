@@ -10,6 +10,8 @@ import com.github.airk.democollection.hidetoolbar.HideToolbarParent;
 import com.github.airk.democollection.materialprogress.MaterialProgressActivity;
 import com.github.airk.democollection.palette.PaletteActivity;
 import com.github.airk.democollection.rxjava.RxActivity;
+import com.github.airk.democollection.testcase.TestActivity;
+import com.github.airk.democollection.webview.WebViewActivity;
 import com.github.airk.democollection.wheeldialog.WheelActivity;
 
 import butterknife.ButterKnife;
@@ -53,4 +55,12 @@ public class HomeActivity extends BaseActivity {
         startActivity(new Intent(this, DownloadActivity.class));
     }
 
+    @OnClick(R.id.testcase_btn) void doTest() {
+        startActivity(new Intent(this, TestActivity.class));
+    }
+
+    @OnClick(R.id.webview_btn) void doWebView() {
+        WebViewActivity.useWebViewType = WebViewActivity.Type.NONE;
+        startActivity(new Intent(this, WebViewActivity.class));
+    }
 }
