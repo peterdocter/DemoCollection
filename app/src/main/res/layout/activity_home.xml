@@ -1,66 +1,78 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".HomeActivity">
 
-    <Button
-        android:id="@+id/palette_btn"
-        android:text="Palette"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/wheel_btn"
-        android:text="Wheel Dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/palette_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Palette" />
 
-    <Button
-        android:id="@+id/progress_btn"
-        android:text="Progress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/wheel_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wheel Dialog" />
 
-    <Button
-        android:id="@+id/rxjava_btn"
-        android:text="RxJava"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/progress_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Progress" />
 
-    <Button
-        android:id="@+id/hide_toolbar_btn"
-        android:text="HideToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/rxjava_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RxJava" />
 
-    <Button
-        android:id="@+id/custom_menu_btn"
-        android:text="CustomMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/hide_toolbar_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HideToolbar" />
 
-    <Button
-        android:id="@+id/downloader_btn"
-        android:text="Downloader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/custom_menu_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CustomMenu" />
 
-    <Button
-        android:id="@+id/testcase_btn"
-        android:text="Testcase"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/downloader_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Downloader" />
 
-    <Button
-        android:id="@+id/webview_btn"
-        android:text="WebView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        <Button
+            android:id="@+id/testcase_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Testcase" />
+
+        <Button
+            android:id="@+id/webview_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WebView" />
+
+
+        <Button
+            android:id="@+id/sview_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scroll view" />
+    </LinearLayout>
+</ScrollView>
 

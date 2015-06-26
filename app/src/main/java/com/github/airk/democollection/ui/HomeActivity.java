@@ -10,6 +10,7 @@ import com.github.airk.democollection.hidetoolbar.HideToolbarParent;
 import com.github.airk.democollection.materialprogress.MaterialProgressActivity;
 import com.github.airk.democollection.palette.PaletteActivity;
 import com.github.airk.democollection.rxjava.RxActivity;
+import com.github.airk.democollection.scrollview.ScrollCustomViewActivity;
 import com.github.airk.democollection.testcase.TestActivity;
 import com.github.airk.democollection.webview.WebViewActivity;
 import com.github.airk.democollection.wheeldialog.WheelActivity;
@@ -62,5 +63,9 @@ public class HomeActivity extends BaseActivity {
     @OnClick(R.id.webview_btn) void doWebView() {
         WebViewActivity.useWebViewType = WebViewActivity.Type.NONE;
         startActivity(new Intent(this, WebViewActivity.class));
+    }
+
+    @OnClick(R.id.sview_btn) void doStarScrollViewActivity() {
+        startActivity(new Intent(this, ScrollCustomViewActivity.class));
     }
 }
