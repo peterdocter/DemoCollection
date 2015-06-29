@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.github.airk.democollection.R;
 import com.github.airk.democollection.model.FakeImageData;
-import com.github.airk.democollection.ui.BaseActivity;
+import com.github.airk.democollection.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

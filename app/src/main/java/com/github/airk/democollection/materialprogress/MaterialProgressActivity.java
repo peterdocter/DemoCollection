@@ -3,7 +3,7 @@ package com.github.airk.democollection.materialprogress;
 import android.os.Bundle;
 
 import com.github.airk.democollection.R;
-import com.github.airk.democollection.ui.BaseActivity;
+import com.github.airk.democollection.BaseActivity;
 
 /**
  * Created by kevin on 15/2/27.

@@ -12,7 +12,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 
 import com.github.airk.democollection.R;
-import com.github.airk.democollection.ui.BaseActivity;
+import com.github.airk.democollection.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

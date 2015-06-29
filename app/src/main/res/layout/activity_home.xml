@@ -73,6 +73,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Scroll view" />
+
+        <Button
+            android:id="@+id/drag_and_swipe"
+            android:text="Drag RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>
 

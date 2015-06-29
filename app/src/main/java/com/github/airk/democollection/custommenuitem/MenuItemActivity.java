@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.github.airk.democollection.R;
-import com.github.airk.democollection.ui.BaseActivity;
+import com.github.airk.democollection.BaseActivity;
 
 /**
  * Created by kevin on 15/3/9.

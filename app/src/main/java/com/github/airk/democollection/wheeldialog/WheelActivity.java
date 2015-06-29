@@ -1,7 +1,6 @@
 package com.github.airk.democollection.wheeldialog;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,7 @@ import android.widget.ListView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.airk.democollection.R;
-import com.github.airk.democollection.ui.BaseActivity;
+import com.github.airk.democollection.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

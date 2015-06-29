@@ -1,11 +1,11 @@
-package com.github.airk.democollection.ui;
+package com.github.airk.democollection;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.github.airk.democollection.R;
 import com.github.airk.democollection.custommenuitem.MenuItemActivity;
 import com.github.airk.democollection.downloader.DownloadActivity;
+import com.github.airk.democollection.dragrecycler.DragAndSwipeActivity;
 import com.github.airk.democollection.hidetoolbar.HideToolbarParent;
 import com.github.airk.democollection.materialprogress.MaterialProgressActivity;
 import com.github.airk.democollection.palette.PaletteActivity;
@@ -67,5 +67,9 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.sview_btn) void doStarScrollViewActivity() {
         startActivity(new Intent(this, ScrollCustomViewActivity.class));
+    }
+
+    @OnClick(R.id.drag_and_swipe) void doShowDragRecyclerView() {
+        startActivity(new Intent(this, DragAndSwipeActivity.class));
     }
 }

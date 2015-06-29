@@ -1,15 +1,12 @@
 package com.github.airk.democollection.testcase;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.github.airk.democollection.R;
 import com.github.airk.democollection.testcase.widget.RippleImageView;
-import com.github.airk.democollection.ui.BaseActivity;
+import com.github.airk.democollection.BaseActivity;
 
 /**
  * Created by kevin on 15/4/1.
