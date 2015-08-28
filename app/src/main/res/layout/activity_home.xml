@@ -79,6 +79,18 @@
             android:text="Drag RecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/bounce_anim"
+            android:text="Bounce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/custom_vg"
+            android:text="Custom ViewGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>
 

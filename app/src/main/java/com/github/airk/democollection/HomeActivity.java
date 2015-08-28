@@ -3,7 +3,9 @@ package com.github.airk.democollection;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.github.airk.democollection.bounce.BounceActivity;
 import com.github.airk.democollection.custommenuitem.MenuItemActivity;
+import com.github.airk.democollection.customvg.CustomViewGroupActivity;
 import com.github.airk.democollection.downloader.DownloadActivity;
 import com.github.airk.democollection.dragrecycler.DragAndSwipeActivity;
 import com.github.airk.democollection.hidetoolbar.HideToolbarParent;
@@ -71,5 +73,13 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.drag_and_swipe) void doShowDragRecyclerView() {
         startActivity(new Intent(this, DragAndSwipeActivity.class));
+    }
+
+    @OnClick(R.id.bounce_anim) void doBounceAnim() {
+        startActivity(new Intent(this, BounceActivity.class));
+    }
+
+    @OnClick(R.id.custom_vg) void doCustomVg() {
+        startActivity(new Intent(this, CustomViewGroupActivity.class));
     }
 }

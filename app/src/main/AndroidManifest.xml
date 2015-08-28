@@ -88,6 +88,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity"/>
         </activity>
+        <activity android:name=".bounce.BounceActivity"
+            android:label="Bounce">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        </activity>
+
+        <activity android:name=".customvg.CustomViewGroupActivity"
+            android:label="CustomViewGroup">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        </activity>
     </application>
 
 </manifest>
